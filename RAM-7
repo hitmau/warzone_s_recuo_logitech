@@ -1,0 +1,32 @@
+--Atualizado em 20/04/2021
+-- Ram 7
+EnablePrimaryMouseButtonEvents (true);
+function OnEvent(event, arg)
+	a = '0x03'
+	if IsKeyLockOn("numlock") then
+		OutputLogMessage("Ativo\n")
+		if IsMouseButtonPressed(3) then
+			repeat
+				if IsMouseButtonPressed(1) then
+					local count = 0
+					repeat
+						count = count + 1
+					----------------------------------------primeiro recuo vertical
+						MoveMouseRelative(0.6,4)
+						Sleep(20)
+						OutputLogMessage("/")
+					until count >= 20 or not IsMouseButtonPressed(1)
+					OutputLogMessage("---")	
+					repeat
+					---------------------------------------segundo recuo vertical e horizontal
+						MoveMouseRelative(2,1)
+						Sleep(20)
+						MoveMouseRelative(2,2)
+						Sleep(20)
+						OutputLogMessage("/")
+					until not IsMouseButtonPressed(1)
+				end
+			until not IsMouseButtonPressed(3)
+		end
+   end
+end
