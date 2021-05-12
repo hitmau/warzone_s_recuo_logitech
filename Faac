@@ -1,0 +1,23 @@
+--Atualizado em 08/05/2021
+-- Faac
+EnablePrimaryMouseButtonEvents (true);
+function OnEvent(event, arg)
+	a = '0x03'
+	if IsKeyLockOn("numlock") then
+		OutputLogMessage("Ativo\n")
+		if IsMouseButtonPressed(3) then
+			repeat
+				if IsMouseButtonPressed(1) then
+					repeat
+					---------------------------------------segundo recuo vertical e horizontal
+						MoveMouseRelative(0,3)
+						Sleep(20)
+						MoveMouseRelative(0,3)
+						Sleep(20)
+						OutputLogMessage("/")
+					until not IsMouseButtonPressed(1)
+				end
+			until not IsMouseButtonPressed(3)
+		end
+   end
+end
