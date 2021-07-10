@@ -1,23 +1,33 @@
 --Atualizado em 08/05/2021
 -- Faac
 EnablePrimaryMouseButtonEvents (true);
+a = 0
+mira = 0
 function OnEvent(event, arg)
-	a = '0x03'
 	if IsKeyLockOn("numlock") then
-		OutputLogMessage("Ativo\n")
+		OutputLogMessage(" - Click ativo\n")
+		OutputLogMessage(a)
 		if IsMouseButtonPressed(3) then
+			mira = mira + 1
+			OutputLogMessage("\n")
+			OutputLogMessage(mira)
+			OutputLogMessage(" Mirando (+)")
 			repeat
 				if IsMouseButtonPressed(1) then
+				local count = 0
 					repeat
+					count = count + 1
 					---------------------------------------segundo recuo vertical e horizontal
 						MoveMouseRelative(0,3)
 						Sleep(20)
 						MoveMouseRelative(0,3)
 						Sleep(20)
-						OutputLogMessage("/")
+						OutputLogMessage(count)
 					until not IsMouseButtonPressed(1)
+					OutputLogMessage("\n")
 				end
 			until not IsMouseButtonPressed(3)
 		end
+	a = a + 1
    end
 end
