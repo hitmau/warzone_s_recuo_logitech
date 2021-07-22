@@ -1,5 +1,5 @@
 --Atualizado em 08/05/2021
--- Faac
+--Faac
 EnablePrimaryMouseButtonEvents (true);
 a = 0
 mira = 0
