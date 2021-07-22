@@ -28,6 +28,6 @@ function OnEvent(event, arg)
 				end
 			until not IsMouseButtonPressed(3)
 		end
-	a = a + 1
+	a =a + 1
    end
 end
