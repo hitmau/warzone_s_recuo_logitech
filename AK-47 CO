@@ -1,0 +1,217 @@
+--Atualizado em 20/04/2021
+-- AK-47 CO
+EnablePrimaryMouseButtonEvents (true);
+function OnEvent(event, arg)
+local scrol_on = 47375
+local scrol_off = 40268
+local loja_on = 15970    
+local diferenca_loja = 2730
+	if IsKeyLockOn("numlock") then
+		if IsMouseButtonPressed(3) then 
+		PressKey("q") 
+			repeat   
+				if IsMouseButtonPressed(1) then
+					--x, y = GetMousePosition();
+					--OutputLogMessage("Mouse is at %d, %d\n", x, y);
+					--Sleep(80)
+----------------------------------------primeiro recuo vertical
+					local count = 0
+					repeat
+						count = count + 1
+						MoveMouseRelative(0,0)
+						Sleep(20)  
+						OutputLogMessage("1")
+					until count >= 5 or not IsMouseButtonPressed(1)
+					local count = 0
+					repeat
+						count = count + 1
+						MoveMouseRelative(0,5)
+						Sleep(20)  
+						OutputLogMessage("2")
+					until count >= 20 or not IsMouseButtonPressed(1)
+					local count = 0
+					repeat
+						count = count + 1
+						MoveMouseRelative(-1,2)
+						Sleep(20)  
+						OutputLogMessage("3")
+					until count >= 40 or not IsMouseButtonPressed(1)
+----------------------------------------primeiro recuo vertical	
+					repeat
+						MoveMouseRelative(0,2)
+						Sleep(20)                             
+						MoveMouseRelative(0,2)
+						Sleep(20)  
+						OutputLogMessage("-")
+					until not IsMouseButtonPressed(1)
+-- Display the script running time
+--OutputLogMessage("This script has been running for: %d ms",
+--GetRunningTime())
+				end
+			until not IsMouseButtonPressed(3)
+			OutputLogMessage("\n")
+		end
+		ReleaseKey("q")
+   end
+if not IsKeyLockOn("scrolllock") then
+  OutputLogMessage("numlock ok e scrolllock off")
+  --[[
+  if (event == "G_RELEASED" and arg == 1) then
+    Sleep(100)
+    MoveMouseTo(22300, scrol_off)
+    PressMouseButton(3)
+    ReleaseMouseButton(3)
+  end
+  if (event == "G_RELEASED" and arg == 7) then
+    Sleep(100)
+    MoveMouseTo(22300, scrol_off)
+    PressMouseButton(3)
+    ReleaseMouseButton(3)
+  end
+  if (event == "G_RELEASED" and arg == 2) then
+    MoveMouseTo(27457, scrol_off)
+    PressMouseButton(3)
+    ReleaseMouseButton(3)
+  end
+  if (event == "G_RELEASED" and arg == 3) then
+    MoveMouseTo(32853, scrol_off)
+    PressMouseButton(3)
+    ReleaseMouseButton(3)
+  end
+  if (event == "G_RELEASED" and arg == 4) then
+    MoveMouseTo(24896, scrol_off)
+    PressMouseButton(1)
+    ReleaseMouseButton(1)
+  end
+  --]]
+  if (event == "G_RELEASED" and arg == 6) then
+      MoveMouseTo(27457, scrol_off)
+      PressMouseButton(3)
+      ReleaseMouseButton(3)
+      Sleep(150)
+      MoveMouseTo(32853, scrol_off)
+      PressMouseButton(3)
+      ReleaseMouseButton(3)
+      Sleep(80)
+      MoveMouseTo(38112, scrol_off)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+      Sleep(80)
+      MoveMouseTo(22400, scrol_off)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+      --12
+      Sleep(80)
+      MoveMouseTo(30121, scrol_off)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+      --rpg
+      Sleep(80)
+      MoveMouseTo(35551, scrol_off)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+  end
+end
+if IsKeyLockOn("scrolllock") then
+  OutputLogMessage("numlock ok e scrolllock on")
+    --Compra 1
+    --Comprar caixa
+    if (event == "G_RELEASED" and arg == 4) then
+      Sleep(200)
+      MoveMouseTo(24008,50533)
+      PressMouseButton(3)
+      Sleep(50)
+      ReleaseMouseButton(3)
+      Sleep(200)
+      MoveMouseTo(24008,32313)
+      PressMouseButton(3)
+      Sleep(50)
+      ReleaseMouseButton(3)
+    end
+    if (event == "G_RELEASED" and arg == 7) then
+      MoveMouseTo(22300, scrol_on)
+      PressMouseButton(3)
+      ReleaseMouseButton(3)
+    end
+  if (event == "G_RELEASED" and arg == 8) then
+    MoveMouseTo(24896, scrol_on)
+    PressMouseButton(1)
+    ReleaseMouseButton(1)
+  end
+    if (event == "G_RELEASED" and arg == 6) then
+      MoveMouseTo(27457, scrol_on)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+      Sleep(80)
+      MoveMouseTo(32853, scrol_on)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+      Sleep(80)
+      MoveMouseTo(38112, scrol_on)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+      Sleep(80)
+      MoveMouseTo(22400, scrol_on)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+      --12
+      Sleep(80)
+      MoveMouseTo(30121, scrol_on)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+      --rpg
+      Sleep(80)
+      MoveMouseTo(35551, scrol_on)
+      PressMouseButton(3)
+      Sleep(10)
+      ReleaseMouseButton(3)
+    end
+end
+x, y = GetMousePosition()
+OutputLogMessage("Mouse is at %d, %d\n", x, y)
+OutputLogMessage(arg)
+--Compras na loja
+ if (event == "G_RELEASED" and arg == 1) then
+      Sleep(150)
+      MoveMouseTo(24008,15970)
+      PressMouseButton(3)
+      Sleep(50)
+      ReleaseMouseButton(3)
+      Sleep(100)
+      MoveMouseTo(24008,32313)
+      PressMouseButton(3)
+      Sleep(50)
+      ReleaseMouseButton(3)
+    end
+    --Compra 2 
+    if (event == "G_RELEASED" and arg == 2) then
+      MoveMouseTo(24008,18820)
+      PressMouseButton(3)
+      Sleep(50)
+      ReleaseMouseButton(3)
+      Sleep(100)
+      MoveMouseTo(24008,32313)
+      PressMouseButton(3)
+      Sleep(50)
+      ReleaseMouseButton(3)
+    end
+    --Compra 3
+    if (event == "G_RELEASED" and arg == 3) then
+      MoveMouseTo(24008,20820)
+      PressMouseButton(3)
+      ReleaseMouseButton(3)
+      Sleep(200)
+      MoveMouseTo(24008,32313)
+      PressMouseButton(3)
+      ReleaseMouseButton(3)
+    end
+end
